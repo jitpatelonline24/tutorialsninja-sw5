@@ -9,9 +9,9 @@ public class TestData {
     @DataProvider(name="Dataset")
     public Object[][] getData(){
         Object[][] data = new Object[][]{
-                {"2.2 GHz Intel Pentium Dual-Core E2200" , "2 GB" ,"320 GB","Vista Home [+$50.00]", "Microsoft Office [+$50.00]"},
-                {"2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]", "4GB [+$20.00]", "400 GB [+$100.00]", "Vista Premium [+$60.00]","Acrobat Reader [+$10.00]"},
-                {"2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]" ,"8GB [+$60.00]", "320 GB" ,"Vista Home [+$50.00]", "Total Commander [+$5.00]" }
+                {"HTC Touch HD", "1","Success: You have added HTC Touch HD to your shopping cart!","HTC Touch HD","Product 1","£74.73"},
+                {"iPhone","2" , "Success: You have added iPhone to your shopping cart!", "iPhone","product 11","£150.92"},
+                {"Palm Treo Pro","3" ,"Success: You have added Palm Treo Pro to your shopping cart!","Palm Treo Pro", "Product 2", "£1,242.11"}
 
         };
         return data;

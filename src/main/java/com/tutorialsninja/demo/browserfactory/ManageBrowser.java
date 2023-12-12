@@ -1,6 +1,6 @@
-package com.nopcommerce.demo.browserfactory;
+package com.tutorialsninja.demo.browserfactory;
 
-import com.nopcommerce.demo.propertyreader.PropertyReader;
+import com.tutorialsninja.demo.propertyreader.PropertyReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

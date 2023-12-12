@@ -1,38 +1,64 @@
 package com.tutorialsninja.demo.testsuite;
 
+import com.tutorialsninja.demo.pages.HomePage;
+import com.tutorialsninja.demo.testbase.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class HomePage {
+public class TopMenuTest extends BaseTest {
 
+    HomePage homePage;
 
-    public void selectMenu(String menu) {
-//1.2 This method should click on the menu whatever name is passed as parameter.
-
+    @BeforeMethod(alwaysRun = true)
+    public void intIt() {
+        homePage = new HomePage();
     }
-@Test
+
+    //1.1 create method with name "selectMenu" it has one parameter name "menu" of type string
+    public void selectMenu(String menu) {
+        homePage.selectMenu(menu);
+    }
+
+    @Test(groups = {"sanity", "smoke", "regression"})
     public void verifyUserShouldNavigateToDesktopsPageSuccessfully() {
+        //1.1 Mouse hover on “Desktops” Tab and click
+        homePage.clickOnDesktopTab();
 
-//1.1 Mouse hover on “Desktops” Tab and click
+        //1.2 call selectMenu method and pass the menu = “Show AllDesktops”
+        selectMenu("Show AllDesktops");
 
-//1.2 call selectMenu method and pass the menu = “Show All Desktops”
+        //1.3 Verify the text ‘Desktops’
+        String expectedText = "Desktops";
+        String actualText = homePage.verifyDesktopsText();
+        Assert.assertEquals(actualText, expectedText, "No navigate to the page");
+    }
 
-// 1.3 Verify the text ‘Desktops’
-}
-@Test
+    @Test(groups = {"smoke", "regression"})
     public void verifyUserShouldNavigateToLaptopsAndNotebooksPageSuccessfully() {
+        //2.1 Mouse hover on “Laptops & Notebooks” Tab and click
+        homePage.clickOnLaptopAndNotebook();
 
-//2.1 Mouse hover on “Laptops & Notebooks” Tab and click
+        //2.2 call selectMenu method and pass the menu = “Show AllLaptops & Notebooks”
+        selectMenu("Show AllLaptops & Notebooks");
 
-//2.2 call selectMenu method and pass the menu = “Show All Laptops & Notebooks”
-}
-//            2.3 Verify the text ‘Laptops & Notebooks’
-    @Test
+        //2.3 Verify the text ‘Laptops & Notebooks’
+        String expectedText = "Laptops & Notebooks";
+        String actualText = homePage.verifyLaptopAndNoteText();
+        Assert.assertEquals(actualText, expectedText, "No navigate to the page");
+    }
+
+    @Test(groups = {"regression"})
     public void verifyUserShouldNavigateToComponentsPageSuccessfully() {
+        //3.1 Mouse hover on “Components” Tab and click
+        homePage.clickOnComponents();
 
-//3.1 Mouse hover on “Components” Tab and click
+        //3.2 call selectMenu method and pass the menu = “Show AllComponents”
+        selectMenu("Show AllComponents");
 
-//3.2 call selectMenu method and pass the menu = “Show All Components”
-
-//            3.3 Verify the text ‘Components
+        //3.3 Verify the text ‘Components’
+        String expectedText = "Components";
+        String actualText = homePage.verifyComponentsText();
+        Assert.assertEquals(actualText, expectedText, "No navigate to the page");
     }
 }

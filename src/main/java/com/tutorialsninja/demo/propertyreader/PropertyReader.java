@@ -1,4 +1,4 @@
-package com.nopcommerce.demo.propertyreader;
+package com.tutorialsninja.demo.propertyreader;
 
 import java.io.FileInputStream;
 import java.util.Properties;

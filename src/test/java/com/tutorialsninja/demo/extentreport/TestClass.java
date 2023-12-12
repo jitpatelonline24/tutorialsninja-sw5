@@ -1,4 +1,4 @@
-package com.nopcommerce.demo.extentreport;
+package com.tutorialsninja.demo.extentreport;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -24,7 +24,7 @@ public class TestClass {
 
         // Report Theme , Report Title and Report Name
         spark.config().setTheme(Theme.DARK);
-        spark.config().setReportName("Nop Commerce");
+        spark.config().setReportName("Tutorials Ninja");
         spark.config().setDocumentTitle("Automation");
 
         // Attach the spark to Report

@@ -1,7 +1,7 @@
-package com.nopcommerce.demo.testbase;
+package com.tutorialsninja.demo.testbase;
 
-import com.nopcommerce.demo.propertyreader.PropertyReader;
-import com.nopcommerce.demo.utility.Utility;
+import com.tutorialsninja.demo.utility.Utility;
+import com.tutorialsninja.demo.propertyreader.PropertyReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

@@ -1,6 +1,6 @@
-package com.nopcommerce.demo.utility;
+package com.tutorialsninja.demo.utility;
 
-import com.nopcommerce.demo.browserfactory.ManageBrowser;
+import com.tutorialsninja.demo.browserfactory.ManageBrowser;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;

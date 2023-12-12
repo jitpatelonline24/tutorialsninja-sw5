@@ -13,7 +13,10 @@
     </listeners>
     <test name="Sanity Test" >
         <classes>
-            <class name="com.nopcommerce.demo.testsuite.LoginPageTest"/>
+            <class name="com.tutorialsninja.demo.testsuite.DesktopsTest"/>
+            <class name="com.tutorialsninja.demo.testsuite.LaptopsAndNotebooksTest"/>
+            <class name="com.tutorialsninja.demo.testsuite.MyAccountsTest"/>
+            <class name="com.tutorialsninja.demo.testsuite.TopMenuTest"/>
         </classes>
     </test>
 </suite>
