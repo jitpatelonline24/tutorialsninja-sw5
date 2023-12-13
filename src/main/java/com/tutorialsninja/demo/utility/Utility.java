@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
@@ -360,5 +362,52 @@ public class Utility extends ManageBrowser {
             e.printStackTrace();
         }
         return destination;
+    }
+    //************************************** Array Methods *********************************************//
+
+    /**
+     * This method will get the arraylist of our choice form dropdown menu list
+     */
+
+    public void getArrayListOfProductsInChoice(WebElement element) {
+        List<WebElement> products = Collections.singletonList(element);
+        ArrayList<String> actualSortByProduct = new ArrayList<>();
+        for (WebElement e : products) {
+            String[] array = e.getText().split("Ex Tax:");
+            actualSortByProduct.add(String.valueOf(Double.valueOf(array[0].substring(1).replaceAll(",", ""))));
+        }
+
+        System.out.println("Before sorting: " + actualSortByProduct);
+        Collections.sort(actualSortByProduct, Collections.reverseOrder());
+        System.out.println("After sorting: " + actualSortByProduct);
+
+        ArrayList<String> afterSortByProduct = new ArrayList<>(actualSortByProduct);
+
+        System.out.println("Expected result: " + afterSortByProduct);
+
+    }
+
+    /**
+     * This method will verify the ArrayList products and print the result
+     */
+    public String verifyTheProductArrangementInArrayList(WebElement element) {
+        System.out.println("Product List after sortBy: " + getTextFromElement(element));
+        return getTextFromElement(element);
+    }
+
+    /**
+     * This method is for lis og products elements
+     *
+     * @return
+     */
+    public void listOfProductsElement(WebElement element, String text) {
+        List<WebElement> listOfMenuElements = driver.findElements((By) element);
+        for (WebElement e : listOfMenuElements) {
+            System.out.println(e.getText());
+            if (e.getText().trim().equalsIgnoreCase(text)) {
+                e.click();
+                break;
+            }
+        }
     }
 }

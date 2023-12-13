@@ -32,12 +32,10 @@ public class LaptopsAndNotebookPage extends Utility {
 
     }
 
-    private void getArrayListOfProductsInChoice(WebElement arrayListOfProducts) {
-    }
-
-    public String verifyProductPriceArrangeInHighToLow() {
+       public String verifyProductPriceArrangeInHighToLow() {
         return verifyTheProductArrangementInArrayList(arrayListOfProducts);
     }
+
 
 
     public void sortByPrice(String option) {

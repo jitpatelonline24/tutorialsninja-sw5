@@ -1,13 +1,16 @@
 package com.tutorialsninja.demo.testsuite;
 
+import com.tutorialsninja.demo.customlisteners.CustomListeners;
 import com.tutorialsninja.demo.pages.AccountLoginPage;
 import com.tutorialsninja.demo.pages.AccountRegisterPage;
 import com.tutorialsninja.demo.pages.HomePage;
 import com.tutorialsninja.demo.testbase.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(CustomListeners.class)
 public class MyAccountsTest extends BaseTest {
     HomePage homepage;
     AccountRegisterPage registerPage;
@@ -58,10 +61,10 @@ public class MyAccountsTest extends BaseTest {
         selectMyAccountOptions("Register");
 
         // * 3.3	Enter First Name
-        registerPage.enterFirstName("Mina");
+        registerPage.enterFirstName("Test");
 
         // * 3.4	Enter Last Name
-        registerPage.enterLastName("Joshi");
+        registerPage.enterLastName("Tester");
 
         // * 3.5	Enter Email
         final String randomEmail;
@@ -69,13 +72,13 @@ public class MyAccountsTest extends BaseTest {
         registerPage.enterEmail(randomEmail);
 
         // * 3.6	Enter Telephone
-        registerPage.enterTelephoneNumber("09876543212");
+        registerPage.enterTelephoneNumber("09581002112");
 
         // * 3.7	Enter Password
-        registerPage.enterPassword("0987654");
+        registerPage.enterPassword("153456");
 
         // * 3.8	Enter Password Confirm
-        registerPage.enterConfirmPassword("0987654");
+        registerPage.enterConfirmPassword("153456");
 
         // * 3.9	Select Subscribe Yes radio button
         registerPage.clickOnSubscribeRadioButton();
@@ -118,7 +121,7 @@ public class MyAccountsTest extends BaseTest {
         selectMyAccountOptions("Login");
 
         // * 4.3	Enter Email address
-        registerPage.enterEmail("robert_jackson@gmail.com");
+        registerPage.enterEmail("test"+generateRandomNumber()+"@gmail.com");
 
         // * 4.5	Enter Password
         registerPage.enterPassword("12345678");

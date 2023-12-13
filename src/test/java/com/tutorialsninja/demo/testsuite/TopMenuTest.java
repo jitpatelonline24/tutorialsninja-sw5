@@ -1,11 +1,15 @@
 package com.tutorialsninja.demo.testsuite;
 
+import com.tutorialsninja.demo.customlisteners.CustomListeners;
 import com.tutorialsninja.demo.pages.HomePage;
 import com.tutorialsninja.demo.testbase.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+
+@Listeners(CustomListeners.class)
 public class TopMenuTest extends BaseTest {
 
     HomePage homePage;
